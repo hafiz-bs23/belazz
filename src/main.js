@@ -7,12 +7,13 @@ import "bootstrap"
 import { library } from '@fortawesome/fontawesome-svg-core'
 
 import { faCircleInfo,
-        faCircleQuestion} from '@fortawesome/free-solid-svg-icons'
+        faCircleQuestion,
+        faBars} from '@fortawesome/free-solid-svg-icons'
 
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 import './assets/main.css'
-library.add(faCircleInfo, faCircleQuestion)
+library.add(faCircleInfo, faCircleQuestion, faBars)
 
 createApp(App).component('font-awesome-icon', FontAwesomeIcon).mount('#app')
 
