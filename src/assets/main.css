@@ -38,6 +38,26 @@ body{
 .navbar {
     padding: 0;
 }
+.spinner-border{
+    display: block;
+    position: fixed;
+    top: calc(50% - (58px / 2));
+    right: calc(50% - (58px / 2));
+    --bs-spinner-border-width: .5em;
+}
+.kobita-container{
+    height: auto;
+}
+
+.bootstrap-loader{
+    position: absolute;
+    top:0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 999;
+}
+
+
 @media (min-width: 1024px) {
     #hero {
         background-attachment: fixed;

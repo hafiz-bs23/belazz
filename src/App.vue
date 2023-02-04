@@ -11,7 +11,7 @@ import axios from "axios";
 export default {
   data(){
     return{
-      showBuli: true,
+      showBuli: false,
       showKobita: false,
       showChora: false,
     }
@@ -21,8 +21,23 @@ export default {
       this.showBuli = param === 'probad';
       this.showKobita = param === 'kobita';
       this.showChora = param === 'chora';
+      this.setLastSelection(param);
+    },
+    getLastSelection(){
+      return localStorage.getItem("lastSelection");
+    },
+    setLastSelection(selection){
+      return localStorage.setItem("lastSelection", selection)
     }
   },
+  created() {
+    var initialParameter = this.getLastSelection();
+    if(initialParameter !== null && initialParameter !== ''){
+      this.updateContentStatus(initialParameter);
+    }else {
+      this.updateContentStatus('probad');
+    }
+  }
 }
 </script>
 

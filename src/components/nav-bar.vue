@@ -32,9 +32,9 @@
           </div>
           <div class="offcanvas-body">
             <div class="d-grid gap-3 col-lg-3 col-md-6 col-12 mx-auto">
-              <button class="menu-btn" type="button" @click.prevent="$emit('updateStatus','probad')">প্রবাদ-প্রবচন</button>
-              <button class="menu-btn" type="button" @click.prevent="$emit('updateStatus','chora')">ছড়া</button>
-              <button class="menu-btn" type="button" @click.prevent="$emit('updateStatus','kobita')">কবিতা</button>
+              <button class="menu-btn" type="button" @click.prevent="$emit('updateStatus','probad')" data-bs-dismiss="offcanvas">প্রবাদ-প্রবচন</button>
+              <button class="menu-btn d-none" type="button" @click.prevent="$emit('updateStatus','chora')" data-bs-dismiss="offcanvas">ছড়া</button>
+              <button class="menu-btn" type="button" @click.prevent="$emit('updateStatus','kobita')" data-bs-dismiss="offcanvas">কবিতা</button>
             </div>
           </div>
         </div>

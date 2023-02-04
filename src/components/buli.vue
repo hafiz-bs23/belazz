@@ -7,7 +7,8 @@ export default {
       title:'',
       description:'',
       showDescriptionButton: false,
-      descriptionButtonLabel:'বিস্তারিত দেখুন'
+      descriptionButtonLabel:'বিস্তারিত দেখুন',
+      contentLoaded: false,
     }
   },
   methods:{
@@ -28,8 +29,10 @@ export default {
             this.description = response.data.omrito_description;
             this.showDescriptionButton = true;
             this.prepareTitle();
+            this.contentLoaded = true;
           })
           .catch(error => {
+            this.contentLoaded = true;
             this.title='সাময়িক ভাবে সেবাটি এখন বন্ধ আছে। এ জন্য আমরা আন্তরিক ভাবে দুঃখিত। কিছু সময় পর আবার চেষ্টা করতে পারেন।'
           })
     }
@@ -43,7 +46,7 @@ export default {
 
 <template>
   <div class="probad-container mt-5">
-    <div class="container">
+    <div v-if="contentLoaded" class="container">
       <div class="row">
         <div class="col-lg-2 col-sm-1" style="height: 10vh;"></div>
         <div class="col-lg-8 col-sm-10 mt-5 text-center mb-5 align-self-center">
@@ -81,6 +84,11 @@ export default {
           </div>
         </div>
         <div class="col-lg-2 col-sm-1" style="height: 80vh;"></div>
+      </div>
+    </div>
+    <div v-if="!contentLoaded" class="bootstrap-loader">
+      <div class="spinner-border text-success" style="width: 4rem; height: 4rem;" role="status">
+        <span class="visually-hidden">Loading...</span>
       </div>
     </div>
   </div>
